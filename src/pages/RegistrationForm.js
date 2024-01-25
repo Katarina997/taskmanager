@@ -42,8 +42,11 @@ const RegistrationForm = () => {
         </div>
       </form>
       <div>
-        <p className='text-sm text-blue-300'>Already have an account?</p>
-        <p className='text-blue-300 text-sm' onClick={() => navigate('/login')}>
+        <p className='text-sm text-black'>Already have an account?</p>
+        <p
+          className='text-black text-sm cursor-pointer'
+          onClick={() => navigate('/')}
+        >
           Sign in now
         </p>
       </div>

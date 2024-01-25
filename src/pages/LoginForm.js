@@ -45,8 +45,8 @@ const LoginForm = () => {
           </div>
         </form>
         <div>
-          <p className='text-sm text-blue-300'>Don't have an account?</p>
-          <p className='text-blue-300 text-sm'>
+          <p className='text-sm text-black'>Don't have an account?</p>
+          <p className='text-black text-sm '>
             <Link to='/register'>Register now!</Link>
           </p>
         </div>
