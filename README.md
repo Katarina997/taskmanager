@@ -1,70 +1,28 @@
-# Getting Started with Create React App
+# Getting Started with the Task manager
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Tailwind was used as a CSS framework.
 
-## Available Scripts
+## How to start the app
 
 In the project directory, you can run:
 
+### `npm install`
+
+and then:
+
 ### `npm start`
 
-Runs the app in the development mode.\
+which runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## DOCUMENTATION
 
-### `npm test`
+**LOGIN FORM** - First of all, we have a login form on the `/` route. A user can sign in only if they are registered beforehand. The form consists of two fields: email and password. Upon successful sign-in, users can proceed to the task list; otherwise, they will encounter an error message stating "Incorrect password or email." Additionally, there is a "Register now" link that redirects to the sign-up form for creating an account.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**REGISTRATION FORM** - The registration form is located on the `/register` route. Similar to the login form, it includes two fields. To successfully sign up, valid data, specifically an email, is required. After successful registration, users are directed to the login page, where they enter their credentials again and click "Sign in."
+There is also a link to redirect the user to the login form if he already has an account.
 
-### `npm run build`
+**TASK LIST** - The task list is accessible through the `/todo` route. Users can access this page after a successful login to add tasks. Clicking on "Add new task" opens a modal with an input field where users can enter a new task which will have TODO as a default state. After clicking the "Add" button, a container displaying the task name, along with edit, delete buttons, and states (TODO, IN PROGRESS, DONE), is shown. Tasks can be deleted with any state but can only be edited when in the TODO state.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The page also features a filter by name and state. It displays only the selected tasks according to three filter scenarios. First, if we filter tasks by name, we will retrieve the task if it matches the name. The second scenario occurs when we choose to filter only by state (ALL, TODO, IN PROGRESS, DONE). The third scenario is when we filter tasks by both name and state.
