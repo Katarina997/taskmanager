@@ -15,6 +15,10 @@ const TodoWrapper = () => {
       const updatedTodoArr = [...allTodos];
       updatedTodoArr[editingIndex].todo = editTodoText;
       setAllTodos(updatedTodoArr);
+      const localStorageData =
+        JSON.parse(localStorage.getItem('todolist')) || [];
+      localStorageData[editingIndex].todo = editTodoText;
+      localStorage.setItem('todolist', JSON.stringify(localStorageData));
       setEditingIndex(null);
       setEditTodoText('');
     } else {
