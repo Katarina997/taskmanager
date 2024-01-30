@@ -26,16 +26,24 @@ const TodoWrapper = () => {
       setAllTodos(updatedTodoArr);
       localStorage.setItem('todolist', JSON.stringify(updatedTodoArr));
       setAddTodoText('');
+      setOriginalTodos(updatedTodoArr);
     }
 
     setIsModalOpen(false);
   };
-
   const handleTaskStateChange = (index, newState) => {
     const updatedTodoArr = [...allTodos];
     updatedTodoArr[index].state = newState;
     setAllTodos(updatedTodoArr);
-    localStorage.setItem('todolist', JSON.stringify(updatedTodoArr));
+    const localStorageData = JSON.parse(localStorage.getItem('todolist')) || [];
+    const todoToUpdate = localStorageData.find(
+      (item) => item.todo === updatedTodoArr[index].todo
+    );
+
+    if (todoToUpdate) {
+      todoToUpdate.state = newState;
+      localStorage.setItem('todolist', JSON.stringify(localStorageData));
+    }
   };
 
   const handleTodoDelete = (index) => {
